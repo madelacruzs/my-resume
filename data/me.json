@@ -51,8 +51,8 @@
     "profession": "Full Stack Engineer",
     "skills": [
         {
-            "category": "Programming languages",
-            "category-values": [
+            "skillCategoryName": "Programming languages",
+            "skillCategoryValues": [
                 { "name": "JavaScript", "percentage": "90%" },
                 { "name": "C#", "percentage": "85%" },
                 { "name": "VB", "percentage": "75%" },
@@ -62,8 +62,8 @@
             ]
         },
         {
-            "category": "Back-End",
-            "category-values": [
+            "skillCategoryName": "Back-End",
+            "skillCategoryValues": [
                 { "name": "Node.js", "percentage": "90%" },
                 { "name": "Express.js", "percentage": "90%" },
                 { "name": "C# .NET", "percentage": "85%" },
