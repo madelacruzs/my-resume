@@ -10,21 +10,30 @@ import Skills from "../components/Skills";
 import userGetData from "../hooks/useGetData";
 
 const App = () => {
-	const data = userGetData();
-	console.log(data);
-	return (
-		<Main>
-			<Sidebar>
-				<About></About>
-			</Sidebar>
-			<Info>
-				<Education></Education>
-				<Experience></Experience>
-				<Certificates></Certificates>
-				<Skills></Skills>
-			</Info>
-		</Main>
-	);
+    const data = userGetData();
+    console.log(data);
+    return data - length === 0 ? (
+        <h1>Loading...</h1>
+    ) : (
+        <Main>
+            <Sidebar>
+                <About
+                    avatar={data.avatar}
+                    name={data.name}
+                    profession={data.profession}
+                    bio={data.bio}
+                    address={data.address}
+                    social={data.social}
+                ></About>
+            </Sidebar>
+            <Info>
+                <Education data={data.education}></Education>
+                <Experience data={data.experience}></Experience>
+                <Certificates data={data.certificates}></Certificates>
+                <Skills data={data.skills}></Skills>
+            </Info>
+        </Main>
+    );
 };
 
 export default App;
