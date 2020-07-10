@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const API = "";
+const API = "https://raw.githubusercontent.com/madelacruzs/my-resume/master/data/me.json";
 
 const useGetData = () => {
 	const [myData, setData] = useState([]);
@@ -8,9 +8,9 @@ const useGetData = () => {
 		fetch(API)
 			.then((response) => response.json())
 			.then((data) => setData(data));
-	});
+	}, []);
 
 	return myData;
 };
 
-//export default useGetData;
+export default useGetData;
