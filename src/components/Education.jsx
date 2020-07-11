@@ -1,20 +1,23 @@
 import React from "react";
+import H2Element from "../styled/H2Element";
+import H3Element from "../styled/H3Element";
+import ParamElement from "../styled/ParamElement";
 
 const Education = (props) => {
     return (
         <div className="Education">
-            <div className="Education-container">
-                {props.data.map((education, index) => (
-                    <div className="Education-item" key={`Edu-${index}`}>
-                        <h3>
-                            {education.degree} {education.institution}
-                            <span>
-                                {education.startDate} - {education.endDate}
-                            </span>
-                        </h3>
-                    </div>
-                ))}
-            </div>
+            <H2Element name="Education" />
+            {props.data.map((edu, index) => (
+                <div className="Education-item" key={`Education-${index}`}>
+                    <H3Element>
+                        {edu.degree} @ {edu.institution}{" "}
+                        <span>
+                            {edu.startDate} - {edu.endDate}
+                        </span>
+                    </H3Element>
+                    <ParamElement content={edu.description} />
+                </div>
+            ))}
         </div>
     );
 };
