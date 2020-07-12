@@ -9,7 +9,7 @@ import Education from "../components/Education";
 import Experience from "../components/Experience";
 import Certificates from "../components/Certificates";
 import Skills from "../components/Skills";
-// import Loader from '../components/Loader';
+import Loader from "../components/Loader";
 const API = "https://raw.githubusercontent.com/madelacruzs/my-resume/master/data/me.json";
 
 const GlobalStyle = createGlobalStyle`
@@ -24,8 +24,11 @@ const GlobalStyle = createGlobalStyle`
 const App = () => {
     const data = userGetData(API);
     console.log(data);
-    return data - length === 0 ? (
-        <h1>Loading...</h1>
+    return data.length === 0 ? (
+        <>
+            <GlobalStyle />
+            <Loader />
+        </>
     ) : (
         <Main>
             <GlobalStyle />
